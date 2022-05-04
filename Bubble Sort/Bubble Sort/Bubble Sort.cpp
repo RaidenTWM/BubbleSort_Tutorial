@@ -22,6 +22,16 @@ void bubbleSort(int array[], int n)
 }
 void printArray(int array[], int n)
 {
+    int count = 0;
+    for (int i = 0; i < n/5; i++)
+    {
+        for (int j = 0; j < n / 10; j++)
+        {
+            std::cout << array[count] << " ";
+            count++;
+        }
+        std::cout << std::endl;
+    }
 }
 void swap(int& a, int& b)
 {
