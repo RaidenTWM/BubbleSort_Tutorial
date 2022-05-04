@@ -1,5 +1,9 @@
 #include <iostream>
 
+int swaps = 0;
+int comparisons = 0;
+
+
 void BubbleSort(int array[], int n);
 void PrintArray(int array[], int n);
 void Swap(int& a, int& b);
@@ -12,7 +16,7 @@ int main()
     std::cout << "Unsorted" << std::endl;
     PrintArray(array_to_be_sorted, array_size);
     BubbleSort(array_to_be_sorted, array_size);
-    std::cout << "Bubble Sort" << std::endl;
+    std::cout << "Bubble Sort" << "\nSwaps = " << swaps << "\nComparisons = " << comparisons << std::endl;
     PrintArray(array_to_be_sorted, array_size);
     system("pause");
     return 0;
@@ -53,9 +57,11 @@ void Swap(int& a, int& b)
     int temp = a;
     a = b;
     b = temp;
+    swaps++;
 }
 bool Bigger(int& a, int& b)
 {
+    comparisons++;
     if (a > b) { return true; }
     return false;
 }
